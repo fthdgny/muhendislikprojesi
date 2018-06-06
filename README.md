@@ -1,0 +1,2 @@
+# muhendislikprojesi
+öğrenci otomasyonu
