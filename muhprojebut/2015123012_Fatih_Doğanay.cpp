@@ -1,23 +1,23 @@
-//MUHENDİSLİK PROJESİ BÜTÜNLEME ÖDEVİ
+//MUHENDISLIK PROJESI BUTUNLEME ODEVI
 //2015123012
-//FATİH DOĞANAY
-#include <iostream> // cout,cin vs. için 
-#include <conio.h> //getch(); fonksiyonu için
-#include <fstream> // dosyalama işlemleri için 
-#include <string> // string türü için 
-#include <clocale> // Türkçe karakter için
-#include <iomanip> //setw() için eklenen kütüphane
+//FATIH DOGANAY
+#include <iostream> // cout,cin vs. iÃ§in 
+#include <conio.h> //getch(); fonksiyonu iÃ§in
+#include <fstream> // dosyalama iÃ¾lemleri iÃ§in 
+#include <string> // string tÃ¼rÃ¼ iÃ§in 
+#include <clocale> // TÃ¼rkÃ§e karakter iÃ§in
+#include <iomanip> //setw() iÃ§in eklenen kÃ¼tÃ¼phane
 #include <stdio.h>
 using namespace std;
 int main()
 {
-	string ogrAdi;	string ogrSoyadi;	int ogrNo;	int ogrSinif; string bolum;//ogrencıler ıcın degıskenler
+	string ogrAdi;	string ogrSoyadi;	int ogrNo;	int ogrSinif; string bolum;//ogrenciler icin degiskenler
 	string dersAdi; string dersBolum; //ders modulu icin degiskenlerimiz
-	int modul;//proje modullerı
-	int secim;	int tercih;	int cevap;//switch case yapılarındakı secımler 	
-	string hocaAdi;	string hocaSoyadi;	string hocaBolum;int sicilNo;//ogretım elemanları ıcın degıskenler 
+	int modul;//proje modulleri
+	int secim;	int tercih;	int cevap;//switch case yapilarindaki secimler 	
+	string hocaAdi;	string hocaSoyadi;	string hocaBolum;int sicilNo;//ogretim elemanlari icin degiskenler 
 	FILE *fp;	
-	moduller://ilk acılan ana sayfamız/modullerımız
+	moduller://ilk acilan ana sayfamiz/modullerimiz
 	cout<<"***** MODUL SECINIZ *****"<<endl<<endl;
 	cout<<"1- OGRENCI MODULU "<<endl;
 	cout<<"2- OGRETIM ELEMANI MODULU "<<endl;
@@ -41,21 +41,21 @@ int main()
 			system("cls");
 			switch(secim)
 			{
-				case 1://ogrenci kayıt ekleme 
+				case 1://ogrenci kayit ekleme 
 				{
 					ekle:
 					cout<<" OGRENCI KAYIT "<<endl;
 					ofstream ogrEkle;
-					ogrEkle.open("ogrenci.txt",ios::out | ios::in | ios::app);//dosyaya yazma işlemi için gerkli satırlar
+					ogrEkle.open("ogrenci.txt",ios::out | ios::in | ios::app);//dosyaya yazma islemi iÃ§in gerekli satirlar
 					cout<<"Ogrenci Numarasi :";cin>>ogrNo;
 					cout<<"Ogrenci Adi      :";cin>>ogrAdi;
 					cout<<"Ogrenci Soyadi   :";cin>>ogrSoyadi;
 					cout<<"Ogrenci Sinifi   :";cin>>ogrSinif;
 					cout<<"Ogrenci Bolumu   :";cin>>bolum;
-					ogrEkle<<ogrNo<<" "<<ogrAdi<<" "<<ogrSoyadi<<" "<<ogrSinif<<" "<<bolum<<endl<<endl;//dosyaya yazma işlemi
+					ogrEkle<<ogrNo<<" "<<ogrAdi<<" "<<ogrSoyadi<<" "<<ogrSinif<<" "<<bolum<<endl<<endl;//dosyaya yazma islemi
 					cout<<endl;
 					ogrEkle.close(); //dosya kapatma
- 					cout<<"Yeni ogrenci Kaydi basarili bir sekilde yapilmistir."<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
+ 					cout<<"Yeni ogrenci kaydi basarili bir sekilde yapilmistir."<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";
  					getch();
  					system("cls");
 					goto ogrenci;
@@ -71,17 +71,17 @@ int main()
 					system("cls");
 					switch(secim)
 					{
-						case 1://ogrenci adına gore arama
+						case 1://ogrenci adina gore arama
 						{
 							cout<<"OGRENCI ADINA GORE ARAMA "<<endl<<endl;
 							string arananAd;
-							ifstream ogrAraAd;//dosyadan okuma işlemi ve dosyayı acma 
+							ifstream ogrAraAd;//dosyadan okuma islemi ve dosyayi acma 
 							ogrAraAd.open("ogrenci.txt",ios::in);
 							cout<<"Ogrenci Adi Giriniz:"; cin>>arananAd;
 							cout<<endl;
 							do 
-					        { 	ogrAraAd>>ogrNo>>ogrAdi>>ogrSoyadi>>ogrSinif>>bolum; //dosya icidenki degiskenlerin okunması
-					            if (arananAd == ogrAdi) //eger consola gırılen deger ile dosya içindeki degerler aynı ise ogrenci bilgileri yazdırılır
+					        { 	ogrAraAd>>ogrNo>>ogrAdi>>ogrSoyadi>>ogrSinif>>bolum; //dosya icidenki degiskenlerin okunmasÃ½
+					            if (arananAd == ogrAdi) //eger consola gÃ½rÃ½len deger ile dosya iÃ§indeki degerler aynÃ½ ise ogrenci bilgileri yazdÃ½rÃ½lÃ½r
 								{ 
 								cout<<"** OGRENCI BILGILERI **"<<endl;
 								cout<<"Ogrenci No    :"<<ogrNo<<endl;
@@ -101,7 +101,7 @@ int main()
 						case 2://ogrenci no ya gore arama 
 						{
 							cout<<"OGRENCI NO'YA GORE ARAMA "<<endl;
-							ifstream ogrAraNo;//dosya okuma ve dosyayı acma 
+							ifstream ogrAraNo;//dosya okuma ve dosyayi acma 
 							ogrAraNo.open("ogrenci.txt",ios::in);
 							int arananNo;
 							cout<<"Ogrenci No Giriniz:";
@@ -109,8 +109,8 @@ int main()
 							cout<<endl;
 							do 
 					        { 	
-								ogrAraNo>>ogrNo>>ogrAdi>>ogrSoyadi>>ogrSinif>>bolum; //dosya ıcındeki degiskenlerin okunması
-					            if (arananNo == ogrNo) //consalo girilen deger dosya ıcıersinde mevcut ise bilgiler yazdırılır
+								ogrAraNo>>ogrNo>>ogrAdi>>ogrSoyadi>>ogrSinif>>bolum; //dosya icindeki degiskenlerin okunmasÃ½
+					            if (arananNo == ogrNo) //consalo girilen deger dosya icerisinde mevcut ise bilgiler yazdÃ½rÃ½lÃ½r
 								{ 
 								cout<<"** OGRENCI BILGILERI **"<<endl;
 								cout<<"Ogrenci No    :"<<ogrNo<<endl;
@@ -119,7 +119,7 @@ int main()
 								cout<<"Ogrenci Sinif :"<<ogrSinif<<endl;
 								cout<<"Ogrenci Bolumu:"<<bolum<<endl;  
 								} 
-					        } while (!ogrAraNo.eof()); //eof=end of FİLE (dosya sonuna varılıncaya kadar)
+					        } while (!ogrAraNo.eof()); //eof=end of FILE (dosya sonuna varilincaya kadar)
 					        ogrAraNo.close(); //dosya kapatma
 							cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 							getch();
@@ -131,13 +131,13 @@ int main()
 						{
 							goto ogrenci;//ust menuye donme 
 						}	
-						default:// farklı bır rakam gırılınce verılen uyarı 
+						default:// farkli bir rakam girilince verilen uyari 
 						cout<<"Lutfen 1 le 3 arasinda bir rakam giriniz:";
 						break;
 					}
 					
 				}
-				case 3://OGRENCİ LİSTELEME
+				case 3://OGRENCÃ LÃSTELEME
 				{
 					liste:
 					cout<<"OGRENCI LISTELEME"<<endl;
@@ -152,15 +152,15 @@ int main()
 						{
 							cout<<"OGRENCI SINIFINA GORE LISTELEME "<<endl;
 							ifstream listeleSinif;
-							listeleSinif.open("ogrenci.txt",ios::in); //dosya okuma ve dosyayı acma
+							listeleSinif.open("ogrenci.txt",ios::in); //dosya okuma ve dosyayi acma
     						int girilensinif; 
     						cout << "Aranilacak Sinif :" ; 
     						cin >> girilensinif;
 					        do 
 					        { 
-					            listeleSinif >> ogrNo >> ogrAdi >> ogrSoyadi >> ogrSinif >> bolum; //degıskenlerın okunması
+					            listeleSinif >> ogrNo >> ogrAdi >> ogrSoyadi >> ogrSinif >> bolum; //degÃ½skenlerÃ½n okunmasÃ½
 					            if (ogrSinif == girilensinif) 
-								{ //gırılen deger eger dosya ıcerısınde mevcur ıse tum degerler yazdırılır
+								{ //gÃ½rÃ½len deger eger dosya Ã½cerÃ½sÃ½nde mevcut ise tum degerler yazdÃ½rÃ½lÃ½r
 								cout<<"** OGRENCI BILGILERI **"<<endl;
 								cout<<"Ogrenci No    :"<<ogrNo<<endl;
 								cout<<"Ogrenci Adi   :"<<ogrAdi<<endl;
@@ -168,7 +168,7 @@ int main()
 								cout<<"Ogrenci Sinif :"<<ogrSinif<<endl;
 								cout<<"Ogrenci Bolumu:"<<bolum<<endl<<endl;  
 								} 
-					        } while (!listeleSinif.eof()); //dosya bıtene dek okur
+					        } while (!listeleSinif.eof()); //dosya bÃ½tene dek okur
 					        listeleSinif.close(); //dosya kapama
 							cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 							getch();
@@ -188,7 +188,7 @@ int main()
 					        { 
 					            listeleBolum>>ogrNo>>ogrAdi>>ogrSoyadi>>ogrSinif>>bolum; 
 					            if (bolum == girilenBolum) 
-								{ //girilen bolum ıle dosya ıcerısındekı bolumlerden aynı olanları yazdırır
+								{ //girilen bolum Ã½le dosya Ã½cerÃ½sÃ½ndekÃ½ bolumlerden aynÃ½ olanlarÃ½ yazdÃ½rÃ½r
 								cout<<"** OGRENCI BILGILERI **"<<endl;
 								cout<<"Ogrenci No    :"<<ogrNo<<endl;
 								cout<<"Ogrenci Adi   :"<<ogrAdi<<endl;
@@ -215,18 +215,18 @@ int main()
 				}
 				case 4://ogrenci bilgilerini DUZENLEME - GUNCELLEME
 				{
-					ifstream dosya;//okuma yapmak ıcın 
-					ofstream yeni;//yazma yapmak ıcın 
+					ifstream dosya;//okuma yapmak Ã½cÃ½n 
+					ofstream yeni;//yazma yapmak Ã½cÃ½n 
 					int duzenleOgrenci;
 					cout<<"Duzenleme yapilacak ogrenci no :"; 	cin>>duzenleOgrenci;
-					dosya.open("ogrenci.txt",ios::in);//okunacak dosya acılıyor
-					yeni.open("gecici_ogrenci.txt",ios::app);//yazılacak dosya acılıyor
+					dosya.open("ogrenci.txt",ios::in);//okunacak dosya acÃ½lÃ½yor
+					yeni.open("gecici_ogrenci.txt",ios::app);//yazÃ½lacak dosya acÃ½lÃ½yor
 					while(!dosya.eof())//dosya sonun kadar okuma
 					{
 						dosya>>ogrNo>>ogrAdi>>ogrSoyadi>>ogrSinif>>bolum; 
-						//dosya ıcerısındekı degerler tek tek okunur
+						//dosya Ã½cerÃ½sÃ½ndekÃ½ degerler tek tek okunur
 					   if(ogrNo == duzenleOgrenci)
-					   {//gırılen no ıle ogrNo aynı ıse degısıklıge ızın verılır
+					   {//gÃ½rÃ½len no Ã½le ogrNo aynÃ½ Ã½se degÃ½sÃ½klÃ½ge Ã½zÃ½n verÃ½lÃ½r
 					   	  	cout<<"Bilgilerinizi Duzenleyin"<<endl;//yeni bilgileri al.
 						  	cout<<"Ogrenci No   : "; cin>>ogrNo;
 					      	cout<<"Ogrenci Adi  : "; cin>>ogrAdi;
@@ -235,12 +235,12 @@ int main()
 						  	cout<<"Ogrencinin Bolumu: ";cin>>bolum;
 					   }
 						yeni<<ogrNo<<" "<<ogrAdi<<" "<<ogrSoyadi<<" "<<ogrSinif<<" "<<bolum<<endl;
-						//yenı adlı dosya etıketıne yenı bılgıler yazılır
+						//yenÃ½ adlÃ½ dosya etÃ½ketÃ½ne yenÃ½ bÃ½lgÃ½ler yazÃ½lÃ½r
 					}
-					dosya.close();//kapatılır
-					yeni.close();//kapatılır
-					remove("ogrenci.txt");//bu ısımlı dosya sılınır.
-					rename("gecici_ogrenci.txt","ogrenci.txt");//gecıcı adlı dosyanın adı ogrencı olarak degıstırılıp kayıt edılır
+					dosya.close();//kapatÃ½lÃ½r
+					yeni.close();//kapatÃ½lÃ½r
+					remove("ogrenci.txt");//bu Ã½sÃ½mlÃ½ dosya sÃ½lÃ½nÃ½r.
+					rename("gecici_ogrenci.txt","ogrenci.txt");//gecÃ½cÃ½ adlÃ½ dosyanÃ½n adÃ½ ogrencÃ½ olarak degÃ½stÃ½rÃ½lÃ½p kayÃ½t edÃ½lÃ½r
 					cout<<"Ogrenci bilgileri basarili bir sekilde guncellenmistir."<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";				 
 					getch();
 					system("cls");
@@ -262,17 +262,17 @@ int main()
 			cout<<"** OGRETIM ELEMANI MODULU **"<<endl<<endl;
 			cout<<"1- OGRETIM ELEMANI KAYIT"<<endl;
 			cout<<"2- OGRETIM ELEMANI ARAMA"<<endl;
-			cout<<"3- OGRETIM ELEMANLARINI LİSTELEME"<<endl;
-			cout<<"4- OGRETIM ELEMANI BILGILERINI DÜZENLEME"<<endl;
+			cout<<"3- OGRETIM ELEMANLARINI LÃSTELEME"<<endl;
+			cout<<"4- OGRETIM ELEMANI BILGILERINI DÃœZENLEME"<<endl;
 			cout<<"5- Ana Menuye Don "<<endl;
 			cout<<"  Islem seciniz: ";cin>>secim;
 			system("cls");
 			switch(secim)
 			{
-				case 1://ogretım elemanı kayıt etme
+				case 1://ogretÃ½m elemanÃ½ kayÃ½t etme
 				{
 					cout<<" OGRETIM ELEMANI KAYIT "<<endl;
-					ofstream hocaEkle; //yazmak ıcın nesne olusturulur
+					ofstream hocaEkle; //yazmak Ã½cÃ½n nesne olusturulur
 					hocaEkle.open("ogrelemani.txt",ios::app);
 					cout<<"Ogretim Elemani Sicil No :";cin>>sicilNo;
 					cout<<"Ogretim Elemani Adi      :";cin>>hocaAdi;
@@ -286,10 +286,10 @@ int main()
 					goto hocalar;	
 					break;
 				}
-				case 2://ogretım elemanını sicil No ıle arama
+				case 2://ogretÃ½m elemanÃ½nÃ½ sicil No Ã½le arama
 				{
 					cout<<"OGRETIM ELEMANI  ARAMA "<<endl;
-					ifstream hocaAra;//dosya okuma ve dosyayı acma 
+					ifstream hocaAra;//dosya okuma ve dosyayÃ½ acma 
 					hocaAra.open("ogrelemani.txt",ios::in);
 					int arananSicil;
 					cout<<"Ogretim Elemani Sicil No Giriniz:";
@@ -297,8 +297,8 @@ int main()
 					cout<<endl;
 					do 
 			        { 	
-						hocaAra>>sicilNo>>hocaAdi>>hocaSoyadi>>hocaBolum; //dosya ıcındeki degiskenlerin okunması
-			            if (arananSicil == sicilNo) //consalo girilen deger dosya ıcıersinde mevcut ise bilgiler yazdırılır
+						hocaAra>>sicilNo>>hocaAdi>>hocaSoyadi>>hocaBolum; //dosya Ã½cÃ½ndeki degiskenlerin okunmasÃ½
+			            if (arananSicil == sicilNo) //consalo girilen deger dosya Ã½cÃ½ersinde mevcut ise bilgiler yazdÃ½rÃ½lÃ½r
 						{ 
 						cout<<"** OGRETIM ELEMANI BILGILERI **"<<endl;
 						cout<<"Ogretim Elemani Sicil No:"<<sicilNo<<endl;
@@ -306,7 +306,7 @@ int main()
 						cout<<"Ogretim Elemani Soyadi  :"<<hocaSoyadi<<endl;
 						cout<<"Ogretim Elemani Bolumu  :"<<hocaBolum<<endl;  
 						} 
-			        } while (!hocaAra.eof()); //eof=end of FİLE (dosya sonuna varılıncaya kadar)
+			        } while (!hocaAra.eof()); //eof=end of FÃLE (dosya sonuna varÃ½lÃ½ncaya kadar)
 			        hocaAra.close(); //dosya kapatma
 					cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 					getch();
@@ -315,7 +315,7 @@ int main()
 					break;
 					
 				}
-				case 3://ogretım elemanlarını lısteleme
+				case 3://ogretÃ½m elemanlarÃ½nÃ½ lÃ½steleme
 				{
 					cout<<"OGRETIM ELEMANI LISTELEME "<<endl<<endl;
 					ifstream hocaListele;
@@ -342,21 +342,21 @@ int main()
 					break;
 					
 				}
-				case 4://ogretım elemanı bilgilerini duzenleme
+				case 4://ogretÃ½m elemanÃ½ bilgilerini duzenleme
 				{
-					ifstream dosya;//okuma yapmak ıcın 
-					ofstream yeni;//yazma yapmak ıcın 
+					ifstream dosya;//okuma yapmak Ã½cÃ½n 
+					ofstream yeni;//yazma yapmak Ã½cÃ½n 
 					int duzenleHoca;
 					cout<<"Duzenleme yapilacak Ogretim Elamani Sicil No :"; 	
 					cin>>duzenleHoca;
-					dosya.open("ogrelemani.txt",ios::in);//okunacak dosya acılıyor
-					yeni.open("gecici_ogrelemani.txt",ios::app);//yazılacak dosya acılıyor
+					dosya.open("ogrelemani.txt",ios::in);//okunacak dosya acÃ½lÃ½yor
+					yeni.open("gecici_ogrelemani.txt",ios::app);//yazÃ½lacak dosya acÃ½lÃ½yor
 					while(!dosya.eof())//dosya sonun kadar okuma
 					{
 						dosya>>sicilNo>>hocaAdi>>hocaSoyadi>>hocaBolum; 
-						//dosya ıcerısındekı degerler tek tek okunur
+						//dosya Ã½cerÃ½sÃ½ndekÃ½ degerler tek tek okunur
 					   if(sicilNo == duzenleHoca)
-					   {//gırılen no ıle ogrNo aynı ıse degısıklıge ızın verılır
+					   {//gÃ½rÃ½len no Ã½le ogrNo aynÃ½ Ã½se degÃ½sÃ½klÃ½ge Ã½zÃ½n verÃ½lÃ½r
 					   	  	cout<<"Bilgilerinizi Duzenleyin"<<endl;//yeni bilgileri al.
 						  	cout<<"Ogretim Elamani Sicil No   : "; cin>>sicilNo;
 					      	cout<<"Ogretim Elamani Adi  : "; cin>>hocaAdi;
@@ -364,12 +364,12 @@ int main()
 						  	cout<<"Ogretim Elamani Bolumu: ";cin>>hocaBolum;
 					   }
 						yeni<<sicilNo<<" "<<hocaAdi<<" "<<hocaSoyadi<<" "<<hocaBolum<<endl;
-						//yenı adlı dosya etıketıne yenı bılgıler yazılır
+						//yenÃ½ adlÃ½ dosya etÃ½ketÃ½ne yenÃ½ bÃ½lgÃ½ler yazÃ½lÃ½r
 					}
-					dosya.close();//kapatılır
-					yeni.close();//kapatılır
-					remove("ogrelemani.txt");//bu ısımlı dosya sılınır.
-					rename("gecici_ogrelemani.txt","ogrelemani.txt");//gecıcı adlı dosyanın adı ogrencı olarak degıstırılıp kayıt edılır
+					dosya.close();//kapatÃ½lÃ½r
+					yeni.close();//kapatÃ½lÃ½r
+					remove("ogrelemani.txt");//bu Ã½sÃ½mlÃ½ dosya sÃ½lÃ½nÃ½r.
+					rename("gecici_ogrelemani.txt","ogrelemani.txt");//gecÃ½cÃ½ adlÃ½ dosyanÃ½n adÃ½ ogrencÃ½ olarak degÃ½stÃ½rÃ½lÃ½p kayÃ½t edÃ½lÃ½r
 					cout<<"Ogretim elamani bilgileri basarili bir sekilde guncellenmistir."<<endl<<"Ust menuye donmek icin lutfen 1 e basiniz...";				 
 					getch();
 					system("cls");
@@ -419,7 +419,7 @@ int main()
 				case 2://ders arama
 				{
 					cout<<"DERS ARAMA "<<endl;
-					ifstream dersAra;//dosya okuma ve dosyayı acma 
+					ifstream dersAra;//dosya okuma ve dosyayÃ½ acma 
 					dersAra.open("ders.txt",ios::in);
 					string arananDers;
 					cout<<"Ders Adi Giriniz:";
@@ -427,14 +427,14 @@ int main()
 					cout<<endl;
 					do 
 			        { 	
-						dersAra>>dersAdi>>dersBolum; //dosya ıcındeki degiskenlerin okunması
-			            if (arananDers == dersAdi) //consalo girilen deger dosya ıcıersinde mevcut ise bilgiler yazdırılır
+						dersAra>>dersAdi>>dersBolum; //dosya Ã½cÃ½ndeki degiskenlerin okunmasÃ½
+			            if (arananDers == dersAdi) //consalo girilen deger dosya Ã½cÃ½ersinde mevcut ise bilgiler yazdÃ½rÃ½lÃ½r
 						{ 
 						cout<<"**DERS BILGILERI **"<<endl;
 						cout<<"Ders Adi   :"<<dersAdi<<endl;
 						cout<<"Ders Bolumu:"<<dersBolum<<endl;
 						} 
-			        } while (!dersAra.eof()); //eof=end of FİLE (dosya sonuna varılıncaya kadar)
+			        } while (!dersAra.eof()); //eof=end of FÃLE (dosya sonuna varÃ½lÃ½ncaya kadar)
 			        dersAra.close(); //dosya kapatma
 					cout<<"Ust menuye donmek icin lutfen 1 e basiniz...";
 					getch();
@@ -506,7 +506,7 @@ int main()
 				break;			
 			}
 		}
-		case 4://NOT GİRİŞİ MODULU 
+		case 4://NOT GÃRÃÃÃ MODULU 
 		{
 			cout<<"***************************************************************"<<endl;
 			cout<<"**                                                           **"<<endl;
@@ -522,7 +522,7 @@ int main()
 				goto moduller;
 				break;
 		}
-		case 5://cikiş için
+		case 5://cikiÃ¾ iÃ§in
 		{
 			return 0;
 			break;
