@@ -1,2 +1,2 @@
 # muhendislikprojesi
-öğrenci otomasyonu
+C++ dilinde yazılmış öğrenci otomasyonudur.
